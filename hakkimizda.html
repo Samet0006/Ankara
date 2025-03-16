@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - ANKARA TANITIM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #c41111;
+            --secondary-color: #a60000;
+            --white: #ffffff;
+            --light-gray: #f0f0f0;
+            --dark-text: #333333;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-text);
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .brand {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 30%;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-item {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-item i {
+            margin-right: 8px;
+        }
+        
+        .content-container {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+        
+        .about-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-section h2 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+        
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .about-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .team-member h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .team-member p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 30px 5%;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .search-container {
+                width: 50%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .search-container {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .nav-item {
+                margin: 5px;
+                font-size: 16px;
+            }
+            
+            .team-section {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Search Bar -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="brand">ANKARA TANITIM</div>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="ARA..">
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item">
+            <i class="nav-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+            </i>
+            ANA SAYFA
+        </a>
+        <a href="hakkimizda.html" class="nav-item">
+            <i class="nav-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </i>
+            HAKKINDA
+        </a>
+        <a href="index.html#gezilecek-yerler" class="nav-item">
+            <i class="nav-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </i>
+            GEZİLECEK YERLER
+        </a>
+        <a href="index.html#kultur" class="nav-item">
+            <i class="nav-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </i>
+            KÜLTÜR
+        </a>
+        <a href="index.html#etkinlikler" class="nav-item">
+            <i class="nav-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+            </i>
+            ETKİNLİKLER
+        </a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="content-container">
+        <h1 class="page-title">HAKKIMIZDA</h1>
+        
+        <!-- About Us Section -->
+        <section class="about-section">
+            <h2>Ankara Tanıtım Projesi</h2>
+            <img src="/api/placeholder/1200/400" alt="Ankara Manzarası" class="about-image">
+            <p>Ankara Tanıtım projesi, Türkiye'nin başkenti Ankara'nın tarihini, kültürünü ve mirasını tanıtmak amacıyla 2023 yılında kurulmuştur. Sitemiz, başkentimizin zengin tarihini, kültürel değerlerini ve turistik yerlerini hem yerli hem de yabancı ziyaretçilere tanıtmayı hedeflemektedir.</p>
+            
+            <p>Ankara Tanıtım olarak amacımız, başkentimizi ziyaret etmek isteyen turistlere ve şehirde yaşayan vatandaşlara şehrin görülmeye değer yerlerini, kültürel zenginliklerini ve etkinliklerini tanıtmaktır. Bu kapsamda sitemizde, Ankara'nın tarihi yapıları, müzeleri, parkları, alışveriş merkezleri ve yemek kültürü hakkında detaylı bilgiler sunuyoruz.</p>
+            
+            <p>Ayrıca, Ankara'da düzenlenen konserler, sergiler, tiyatro gösterileri ve festivaller gibi etkinlikler hakkında güncel bilgiler paylaşarak şehrin kültürel hayatına katkı sağlamayı amaçlıyoruz. Mustafa Kemal Atatürk'ün şehrimize olan bağını ve mirasını vurgulayan özel bölümlerimizle de Cumhuriyet tarihimize ışık tutuyoruz.</p>
+        </section>
+        
+        <section class="about-section">
+            <h2>Misyonumuz ve Vizyonumuz</h2>
+            <p><strong>Misyonumuz:</strong> Ankara'nın tarihi ve kültürel zenginliklerini en doğru ve güncel bilgilerle tanıtarak, şehrin turizm potansiyelini artırmak ve kültürel mirasını korumak için farkındalık yaratmaktır.</p>
+            
+            <p><strong>Vizyonumuz:</strong> Ankara'nın sadece politik bir başkent değil, aynı zamanda zengin bir tarihe ve kültüre sahip bir şehir olduğunu tüm dünyaya göstermek ve şehrin turizm değerlerini ulusal ve uluslararası platformlarda tanınır hale getirmektir.</p>
+        </section>
+        
+        <section class="about-section">
+            <h2>Neler Sunuyoruz?</h2>
+            <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.6;">
+                <li>Ankara'nın tarihi ve turistik yerlerinin detaylı tanıtımları</li>
+                <li>Güncel etkinlik ve festival bilgileri</li>
+                <li>Yerel yemekler ve restoranlar hakkında öneriler</li>
+                <li>Şehir içi ulaşım rehberleri ve pratik bilgiler</li>
