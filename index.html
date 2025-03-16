@@ -244,7 +244,7 @@
             </i>
             GEZİLECEK YERLER
         </a>
-        <a href="kültür.html" class="nav-item">
+        <a href="kultur.html" class="nav-item">
             <i class="nav-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -292,33 +292,49 @@
         <!-- GEZİLECEK YERLER Card -->
         <div id="gezilecek-yerler" class="category-card">
             <div class="image-placeholder">
-                <img src="/api/placeholder/800/600" alt="Ankara Gezilecek Yerler">
+                <a href="gezilecekyerler.html">
+                    <img src="/api/placeholder/800/600" alt="Ankara Gezilecek Yerler">
+                </a>
             </div>
-            <div class="category-title">GEZİLECEK YERLER</div>
+            <div class="category-title">
+                <a href="gezilecekyerler.html" style="color: white; text-decoration: none;">GEZİLECEK YERLER</a>
+            </div>
         </div>
         
         <!-- KÜLTÜR Card -->
         <div id="kultur" class="category-card">
             <div class="image-placeholder">
-                <img src="/api/placeholder/800/600" alt="Ankara Kültür">
+                <a href="kultur.html">
+                    <img src="/api/placeholder/800/600" alt="Ankara Kültür">
+                </a>
             </div>
-            <div class="category-title">KÜLTÜR</div>
+            <div class="category-title">
+                <a href="kultur.html" style="color: white; text-decoration: none;">KÜLTÜR</a>
+            </div>
         </div>
         
         <!-- ETKİNLİKLER Card -->
         <div id="etkinlikler" class="category-card">
             <div class="image-placeholder">
-                <img src="/api/placeholder/800/600" alt="Ankara Etkinlikler">
+                <a href="etkinlikler.html">
+                    <img src="/api/placeholder/800/600" alt="Ankara Etkinlikler">
+                </a>
             </div>
-            <div class="category-title">ETKİNLİKLER</div>
+            <div class="category-title">
+                <a href="etkinlikler.html" style="color: white; text-decoration: none;">ETKİNLİKLER</a>
+            </div>
         </div>
         
         <!-- MUSTAFA KEMAL ATATÜRK Card -->
         <div id="ataturk" class="category-card" style="grid-column: span 2;">
             <div class="image-placeholder">
-                <img src="/api/placeholder/1200/600" alt="Mustafa Kemal Atatürk">
+                <a href="ataturk.html">
+                    <img src="/api/placeholder/1200/600" alt="Mustafa Kemal Atatürk">
+                </a>
             </div>
-            <div class="category-title">MUSTAFA KEMAL ATATÜRK</div>
+            <div class="category-title">
+                <a href="ataturk.html" style="color: white; text-decoration: none;">MUSTAFA KEMAL ATATÜRK</a>
+            </div>
         </div>
     </main>
     
@@ -329,23 +345,7 @@
     </footer>
     
     <script>
-        // JavaScript for interactive features can be added here
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation (except for the HAKKINDA link which goes to a separate page)
-            document.querySelectorAll('.nav-item:not([href="hakkimizda.html"])').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
+        // JavaScript kodunu kaldırdım çünkü artık doğrudan sayfa yönlendirmesi kullanıyoruz
     </script>
 </body>
 </html>
